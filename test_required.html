@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="dist/css/bootstrap-select-country.min.css" />
+  <link rel="stylesheet" href="dist/css/bootstrap-slider.min.css" />
+  <link rel="stylesheet" href="dist/css/bootstrap.css" >
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dist/css/main.css">
+  <base target="_blank">
+  <script type="text/javascript" charset="utf-8" async="" src="https://platform.twitter.com/js/button.3ebb4253c7cb2cc3c9eaac42044fc82c.js"></script></head>
+  <title>Find fashion influencers</title>
+</head>
+<body>
+  <div class="container" id="all">
+    <input type="text" id="timer" style="float:right;width:50px;height:20px;">
+    <h1>Overview</h1>
+    <p>We are researchers from the University of Fribourg. The goal of our research is to predict fashion trends. To achieve this goal, we need to find fashion influencers on Twitter as they have a strong impact on the fashion industry. In this task, you will help us find these fashion influencers on Twitter. We will ask you to name as many fashion influencer as you know.
+      <br>
+      <br>
+    </p>
+
+    <h1>Steps</h1>
+
+    <p>This task consists of two main sections:</p>
+
+    <ol>
+      <li>The first section is designed to get to know you a little which will help us to analyse the results we get. We will ask you general questions about your age, gender and location. Your answers will be kept anonymous
+      </li>
+      <li>The second section is related to your knowledge about fashion influencers and fashion in general.
+      </li>
+    </ol>
+    
+    <br>
+
+    <h1>Rules and Tips</h1>
+    <ul>
+      <li>By participating in this task you will help our academic research. If you continue you accept our <a href="ethics_consent.pdf" rel="noopener noreferrer" target="_blank">Terms and Conditions.</a></li>
+      <li>A fashion infuencer is someone who has an impact on his/her followers if he/she promotes new products or a new fashion style.</li>
+    </ul>
+    <br>
+    <h4><strong>IMPORTANT:</strong></h4>
+    <ul>
+      <h4> <li>You need to validate both  Section 1 and Section 2 to be able to submit the survey. </h4>
+        <h4><li> When you finish all sections of this survey, click "Submit" to submit yours answers.</h4>
+          <h4><li>You need to be signed in to your twitter account to work on the task</h4>
+            <ul>
+              <li>The fashion influencer and your follower's account need both to be valid twitter accounts. To ensure this, you might want to log in to your account so you get the correct user names otherwise you would likely get an error message.</li>
+            </ul>
+
+            <hr> 
+          </ul>
+          <form id="contact-form" method="post" role="form">
+            <section>
+              <h1>Section 1: Tell us a bit about yourself</h1>
+              <p>
+
+                <h4>Are you male or female? </h4>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="male" >
+                  <label class="form-check-label" for="gender">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                  <label class="form-check-label" for="gender">
+                    Female
+                  </label>
+                </div>
+              </p>
+              <p>
+                <h4>How old are you? </h4>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="age" id="range1" value="range1" required />
+                  <label class="form-check-label" for="age" >
+                    Under 20
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="age" id="range2" value="range2" required />
+                  <label class="form-check-label" for="age">
+                    Between 21 and 30
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="age" id="range3" value="range3" required />
+                  <label class="form-check-label" for="age">
+                    Between 31 and 40
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="age" id="range4" value="range4" required />
+                  <label class="form-check-label" for="age">
+                   Between 41 and 50
+                 </label>
+               </div>
+               <div class="form-check">
+                <input class="form-check-input" type="radio" name="age" id="range5" value="range5" required />
+                <label class="form-check-label" for="age">
+                 51 or older
+               </label>
+             </div>
+           </p>
+           <div class="country">
+            <h4>Where do you live? </h4>
+            <select class="selectpicker countrypicker" id="country"></select>
+            <pre class="html"></pre>
+          </div>
+          <h4>Please give us the username of your twitter account and then click "Check" to validate your choice:*</h4>
+          <div class="col">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div action="https://twitter.com/search" method="get">
+                  <input type="hidden" name="mode" value="users">
+                  <div class="Typeahead Typeahead--twitterUsers">
+                    <input class="Typeahead-hint" type="text" tabindex="-1" readonly="" dir="ltr">
+                    <input class="Typeahead-input tt-input" id="twitter_own" type="text" name="q" placeholder="Username" autocomplete="off" spellcheck="false" dir="auto">
+                    <div class="Typeahead-menu"><div class="tt-dataset tt-dataset-0"><div class="ProfileCard u-cf Typeahead-suggestion Typeahead-selectable">
+                    </div></div></div>
+                  </div>
+                  <button class="u-hidden" type="submit">blah</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-lg-right">
+            <button id="btn_twitter" class="btn btn-outline-secondary active" type="button">Check</button>
+          </div>
+          <div id="valid_own" style="display: none;">Section 1 is validated</div>
+          <div id="invalid_own" style="display: none;">The twitter account is not valid</div>
+          <br>
+        </section>
+        <section id="sec1">
+          <h1>Section 2: How well do you know fashion influencers</h1>
+        </section>
+      <section>
+      <button type="submit" id="btn_sub" class="btn btn-secondary btn-lg btn-block" >Submit</button>
+    </section>
+  </form>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script><script id="result-template" type="text/x-handlebars-template">
+    <div class="ProfileCard u-cf">
+      <img class="ProfileCard-avatar" src="{{profile_image_url_https}}">
+
+      <div class="ProfileCard-details">
+        <div class="ProfileCard-realName">{{name}}</div>
+        <div class="ProfileCard-screenName">@{{screen_name}}</div>
+      </div>
+    </div>
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="dist/js/bootstrap-select-country.min.js"></script>
+  <script src="dist/js/bootstrap-slider.min.js"></script>
+  <script src="myScript.js"></script>
+  <script id="empty-template" type="text/x-handlebars-template">
+    <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
+  </script>
+  <script src="dist/js/handlebars.js"></script>
+  <script src="dist/js/jquery.xdomainrequest.min.js"></script>
+  <script src="dist/js/typeahead.bundle.js"></script>
+  <script src="dist/js/main.js"></script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-31893438-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
